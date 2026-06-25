@@ -3,7 +3,7 @@
 Professional Minecraft server VPN management plugin with advanced detection and administrative controls.
 
 **Version**: 1.0.0
-**Developer**: Jinkra Team
+**Developer**: Jinkra
 
 ## Features
 
@@ -139,18 +139,10 @@ Fine-grained permission system allows:
 
 [Add your license here]
 
-## Version History
-
-### v1.0.0 (2026-06-25)
-- Initial release
-- Full VPN detection system
-- Complete management interface
-- Statistics and logging
-- Multi-database support
 
 ## Developer
 
-**Jinkra Team**
+**Jinkra**
 
 ---
 
