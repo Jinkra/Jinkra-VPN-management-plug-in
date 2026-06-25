@@ -1,0 +1,83 @@
+Jinkra VPN 1.0.0 - 快速参考
+
+【安装】
+1. 复制 Jinkra-VPN-1.0.0.jar 到 plugins/ 文件夹
+2. 重启服务器
+3. 完成！
+
+【基础命令】
+/jinkra help              显示帮助
+/jinkra check <玩家>     检查玩家VPN状态
+/jinkra stats            查看统计信息
+/jinkra whitelist list   查看IP白名单
+/jinkra whitelist add <IP>      添加白名单
+/jinkra whitelist remove <IP>   移除白名单
+/jinkra reload           重新加载配置
+
+【权限】
+jinkra.admin             - 完全管理权限（默认OP）
+jinkra.check             - 检查权限
+jinkra.whitelist.manage  - 白名单管理权限
+jinkra.stats             - 查看统计权限
+jinkra.bypass            - VPN检查绕过权限
+
+【配置文件】
+plugins/Jinkra-VPN/config.yml  - 主配置
+plugins/Jinkra-VPN/lang/       - 语言文件
+jinkra_vpn.h2.db              - 数据库（H2模式）
+
+【主要功能】
+✓ VPN/代理检测（11+ API源）
+✓ MCLeaks盗版账号检测
+✓ 多数据库支持（MySQL/PostgreSQL/H2/SQLite）
+✓ 分布式同步（Redis/RabbitMQ）
+✓ 详细的统计与日志
+✓ 灵活的权限管理
+✓ IP白名单管理
+✓ 实时监控
+
+【文件位置】
+JAR文件:     C:\Users\duban\jinkra-vpn-bukkit\output\Jinkra-VPN-1.0.0.jar
+发布包:     C:\Users\duban\jinkra-vpn-bukkit\release\Jinkra-VPN-1.0.0\
+文档:       C:\Users\duban\jinkra-vpn-bukkit\README_ZH.md
+源代码:     C:\Users\duban\jinkra-vpn-bukkit\src\
+
+【数据库配置】
+H2（推荐用于小型服务器）:
+  type: 'h2'
+  file: 'jinkra_vpn'
+
+MySQL（推荐用于大型服务器）:
+  type: 'mysql'
+  address: '127.0.0.1:3306'
+  database: 'jinkra_vpn'
+
+【检测算法】
+Cascade（默认）：按优先级顺序尝试，使用第一个成功结果
+Consensus：并行查询所有源，需要60%+同意才判定为VPN
+
+【常见问题】
+Q: 如何只给某些玩家权限？
+A: 使用权限管理插件如 LuckPerms：
+   /lp user PlayerName permission set jinkra.admin true
+
+Q: 如何关闭VPN检测？
+A: 在config.yml中disable所有sources即可
+
+Q: 检测不工作？
+A: 1. 检查网络连接
+   2. 查看console是否有错误
+   3. 确认至少一个source已启用
+   4. 检查数据库连接
+
+【支持与帮助】
+- 详细文档: README_ZH.md
+- 安装指南: INSTALL.txt
+- 系统要求: REQUIREMENTS.txt
+- 开发团队: Jinkra Team
+
+【版本信息】
+版本: 1.0.0
+完成日期: 2026-06-25
+JAR大小: 3.27 MB
+开发: Jinkra Team
