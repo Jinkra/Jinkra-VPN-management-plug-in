@@ -7,7 +7,7 @@
 - **版本**: 1.0.0
 - **兼容**: Bukkit/Spigot 1.13+
 - **大小**: 3.27 MB
-- **开发**: Jinkra Team
+- **开发**: Jinkra
 
 ## 主要功能
 
@@ -318,18 +318,16 @@ messaging:
 
 ## 支持与反馈
 
-- 开发: Jinkra Team
-- 项目目录: `/c/Users/duban/jinkra-vpn-bukkit/`
+- 开发: Jinkra
+- 项目目录: `/jinkra-vpn-bukkit/`
 
 ## 更新日志
 
 ### v1.0.0 (2026-06-25)
+
 - 首次发布
-- 基于 AntiVPN 6.4.13
-- 新增 Jinkra 管理命令系统
-- 新增统计与日志模块
 - 新增权限细粒度控制
 
 ## 许可证
 
-本插件由 Jinkra Team 开发。
+本插件由 Jinkra 开发。
