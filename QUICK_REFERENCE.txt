@@ -74,10 +74,10 @@ A: 1. 检查网络连接
 - 详细文档: README_ZH.md
 - 安装指南: INSTALL.txt
 - 系统要求: REQUIREMENTS.txt
-- 开发团队: Jinkra Team
+- 开发团队: Jinkra
 
 【版本信息】
 版本: 1.0.0
 完成日期: 2026-06-25
 JAR大小: 3.27 MB
-开发: Jinkra Team
+开发: Jinkra
