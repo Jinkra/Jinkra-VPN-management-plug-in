@@ -1,0 +1,216 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║          Jinkra VPN 1.0.0 - Installation Guide                   ║
+║          Jinkra VPN 1.0.0 - 快速安装指南                          ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+【ENGLISH】
+═══════════════════════════════════════════════════════════════════
+
+QUICK START
+
+1. Installation
+   • Download Jinkra-VPN-1.0.0.jar
+   • Copy to your server's plugins/ folder
+   • Restart the server
+   • Configuration files will auto-generate
+
+2. First Use
+   • Edit plugins/Jinkra-VPN/config.yml
+   • Configure your database (H2 is default)
+   • Use /jinkra help to see commands
+   • OP players have all permissions by default
+
+3. Main Commands
+   /jinkra help                 Show help
+   /jinkra check <player>       Check player VPN status
+   /jinkra stats                View statistics
+   /jinkra whitelist list       View whitelist
+   /jinkra whitelist add <IP>   Add to whitelist
+   /jinkra reload               Reload config
+
+4. Permissions
+   jinkra.admin                 Full access
+   jinkra.check                 Check permission
+   jinkra.whitelist.manage      Whitelist management
+   jinkra.stats                 View statistics
+   jinkra.bypass                Bypass VPN check
+
+5. Support
+   See README.md for detailed documentation
+
+
+【中文】
+═══════════════════════════════════════════════════════════════════
+
+快速开始
+
+1. 安装步骤
+   • 下载 Jinkra-VPN-1.0.0.jar
+   • 复制到服务器的 plugins/ 文件夹
+   • 重启服务器
+   • 配置文件会自动生成
+
+2. 首次使用
+   • 编辑 plugins/Jinkra-VPN/config.yml
+   • 配置数据库（默认使用 H2）
+   • 使用 /jinkra help 查看命令
+   • OP 玩家默认拥有所有权限
+
+3. 主要命令
+   /jinkra help                 显示帮助
+   /jinkra check <玩家>         检查玩家VPN状态
+   /jinkra stats                查看统计信息
+   /jinkra whitelist list       查看白名单
+   /jinkra whitelist add <IP>   添加到白名单
+   /jinkra reload               重新加载配置
+
+4. 权限节点
+   jinkra.admin                 完全权限
+   jinkra.check                 查看权限
+   jinkra.whitelist.manage      白名单管理
+   jinkra.stats                 查看统计
+   jinkra.bypass                VPN 绕过
+
+5. 支持文档
+   详见 README_ZH.md 完整文档
+
+
+【系统要求 / REQUIREMENTS】
+═══════════════════════════════════════════════════════════════════
+
+服务器 / Server
+  • Bukkit/Spigot 1.13+
+  • Java 8 or higher
+
+资源 / Resources
+  • RAM: 50-100 MB recommended
+  • Storage: 100 MB+ recommended
+  • Network: Good internet connection
+
+数据库 / Database (可选 / Optional)
+  • MySQL 5.5+ (for large servers)
+  • PostgreSQL (for large servers)
+  • H2 (embedded, default)
+  • SQLite (embedded)
+
+
+【故障排除 / TROUBLESHOOTING】
+═══════════════════════════════════════════════════════════════════
+
+问题：插件无法启动
+解决：
+  1. 检查 Java 版本 (需要 8+)
+  2. 查看服务器日志中的错误
+  3. 确保 plugins 文件夹存在
+  4. 删除配置文件重新生成
+
+问题：VPN 检测不工作
+解决：
+  1. 检查网络连接
+  2. 查看控制台错误日志
+  3. 确认至少一个检测源已启用
+  4. 检查数据库连接
+  5. 检查 API 速率限制
+
+问题：权限不工作
+解决：
+  1. 检查玩家权限是否正确设置
+  2. 确认权限节点名称正确
+  3. 使用权限管理插件 (LuckPerms/PermissionsEx)
+  4. OP 玩家默认有所有权限
+
+问题：性能下降
+解决：
+  1. 增加缓存时间
+  2. 减少启用的检测源
+  3. 使用 MySQL 而不是 SQLite
+  4. 增加连接池大小
+
+
+【配置示例 / CONFIGURATION EXAMPLE】
+═══════════════════════════════════════════════════════════════════
+
+H2 数据库 (推荐小型服务器):
+  storage:
+    engines:
+      engine1:
+        type: 'h2'
+        enabled: true
+        connection:
+          file: 'jinkra_vpn'
+
+MySQL 数据库 (推荐大型服务器):
+  storage:
+    engines:
+      engine1:
+        type: 'mysql'
+        enabled: true
+        connection:
+          address: '127.0.0.1:3306'
+          database: 'jinkra_vpn'
+          username: 'root'
+          password: 'password'
+
+VPN 检测源:
+  sources:
+    proxycheck:
+      enabled: true
+    iptrooper:
+      enabled: true
+    getipintel:
+      enabled: true
+
+
+【权限设置示例 / PERMISSION EXAMPLES】
+═══════════════════════════════════════════════════════════════════
+
+LuckPerms:
+  /lp user PlayerName permission set jinkra.admin true
+  /lp group staff permission set jinkra.check true
+  /lp group admin permission set jinkra.whitelist.manage true
+
+PermissionsEx:
+  /pex user PlayerName add jinkra.admin
+  /pex group staff add jinkra.check
+
+命令行 OP:
+  /op PlayerName  (拥有所有权限)
+
+
+【文件位置 / FILE LOCATIONS】
+═══════════════════════════════════════════════════════════════════
+
+主配置: plugins/Jinkra-VPN/config.yml
+语言文件: plugins/Jinkra-VPN/lang/
+数据库: jinkra_vpn.h2.db (H2模式)
+日志: server.log
+统计: plugins/Jinkra-VPN/logs/
+
+
+【获取帮助 / GET HELP】
+═══════════════════════════════════════════════════════════════════
+
+文档: README.md 或 README_ZH.md
+快速参考: QUICK_REFERENCE.txt
+详细配置: config.yml 中的注释
+服务器控制台: /jinkra help
+
+
+【版本信息 / VERSION INFO】
+═══════════════════════════════════════════════════════════════════
+
+版本: 1.0.0
+发布日期: 2026-06-25
+开发团队: Jinkra Team
+兼容版本: Bukkit/Spigot 1.13+
+Java版本: 8+
+包大小: 3.27 MB
+
+
+═══════════════════════════════════════════════════════════════════
+准备好了！祝你使用愉快！
+Ready to go! Enjoy!
+═══════════════════════════════════════════════════════════════════
